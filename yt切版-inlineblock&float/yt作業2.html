@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/all.css">
+
+</head>
+<style>
+  body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(21, 21, 21);
+    box-sizing: border-box;
+  }
+
+  .big-container-top {
+    background-color: rgba(34, 34, 34, 0.98);
+    z-index: 1;
+    width: 87%;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
+  .big-container-left {
+    width: 13%;
+    height: 100vh;
+    background-color: #222;
+    position: fixed;
+    left: 0;
+    top: 55px;
+  }
+
+  .container-left {
+    background-color: #222;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .col {
+    width: 100%;
+    height: 35px;
+    margin-top: 0px;
+    border-top: 0;
+    float: left;
+    color: white;
+    font-size: 12px;
+  }
+
+  .col:hover {
+    background-color: #444;
+  }
+
+  .header {
+    top: 0;
+    left: 0;
+    width: 13%;
+    height: 55px;
+    line-height: 45px;
+    z-index: 1;
+  }
+
+  .icon {
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    line-height: 35px;
+    float: left;
+    font-size: 0.8rem;
+  }
+
+  .header-icon {
+    width: 28%;
+    height: 100%;
+    text-align: center;
+    line-height: 56px;
+    float: left;
+    font-size: .8rem;
+  }
+
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .float {
+    float: left;
+  }
+
+  .text {
+    width: 70%;
+    height: 100%;
+    line-height: 35px;
+    float: left;
+  }
+
+  .line {
+    border-bottom: 1px solid #666;
+  }
+
+  .line-top {
+    margin-top: 5px;
+  }
+
+  .text2 {
+    font-size: 12px;
+    color: white;
+    padding: 28px;
+    padding-top: 10px;
+  }
+
+  .text3 {
+    width: 100%;
+    font-size: 12px;
+    color: white;
+    padding-left: 25px;
+    box-sizing: border-box;
+  }
+
+  .text4 {
+    width: 100%;
+    height: 30%;
+    font-size: 12px;
+    color: white;
+    padding: 25px;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+  }
+
+  .yt {
+    line-height: 56px;
+  }
+
+  .container-top2 {
+    height: 55px;
+    right: 0;
+    margin: auto;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+  }
+
+  .big-container-right {
+    width: 100%;
+    height: 300%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    pointer-events: none;
+  }
+
+
+  .icon2 {
+    float: left;
+    font-size: 3rem;
+  }
+
+  #search {
+    width: 40%;
+    height: 35px;
+    margin: auto;
+    background-color: #111;
+    color: white;
+    z-index: 5;
+    margin-top: 11px;
+    margin-right: 200px;
+  }
+
+  .icon3 {
+    position: absolute;
+    top: 18px;
+    left: 71%;
+    margin: auto;
+    color: white;
+  }
+
+  .icon4:hover {
+    cursor: pointer;
+  }
+
+  .icon4 {
+    position: absolute;
+    top: 20px;
+    right: 220px;
+    margin: auto;
+    color: white;
+    outline: 1px solid #666;
+    outline-offset: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .icon5 {
+    position: absolute;
+    top: 20px;
+    right: 130px;
+    margin: auto;
+    color: white;
+    border-radius: 50%;
+    z-index: 99;
+  }
+
+  .icon6 {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    margin: auto;
+    color: white;
+    border-radius: 50%;
+    z-index: 99;
+  }
+
+  .icon7 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: auto;
+    color: white;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .icon7:hover {
+    color: #666;
+  }
+
+  i {
+    cursor: pointer;
+  }
+
+  a:link {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:hover {
+    color: gray;
+  }
+
+  a:active {
+    color: white;
+  }
+
+  .small-box {
+    width: auto;
+    height: 20px;
+    color: white;
+    float: left;
+    position: relative;
+    top: 10px;
+    margin: auto;
+    margin-right: 18px;
+    background-color: #444;
+    border-radius: 23px;
+    font-size: small;
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  .big-box {
+    height: 55px;
+    width: 1400px;
+    position: relative;
+    margin: auto;
+  }
+
+  .link {
+    text-decoration: none;
+    padding: auto;
+  }
+
+  .small-box:hover {
+    background-color: #888;
+    text-decoration: none;
+    color: white;
+  }
+
+  .button {
+    border-top: 1px solid #888;
+    background: #888;
+    background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#888));
+    background: -moz-linear-gradient(top, #888, #888);
+    padding: 6.5px 13px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    border-top-color: #888;
+    background: #888;
+    color: #ccc;
+  }
+
+  .button:active {
+    border-top-color: #4e585e;
+    background: #4e585e;
+  }
+
+  .banner {
+    width: 100%;
+    height: 200px;
+    background-color: #111;
+    left: 100px;
+    margin: auto;
+    color: white;
+    padding: 50px;
+    padding-left: 80px;
+    font-family: '微軟正黑體';
+    font-size: 1.5rem;
+    margin-top: 130px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 45px;
+    padding: 5px;
+    position: relative;
+    margin-top: 50px;
+    top: 100px;
+    right: 405px;
+    margin: auto;
+    background-color: #111;
+    border: 2px solid white;
+    color: #fff;
+  }
+
+
+  .btn1 {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 135px;
+    right: 5px;
+    margin: auto;
+    background-color: rgba(192, 192, 192, 0.9);
+    border: 1px solid rgba(192, 192, 192, 0.5);
+    color: #000;
+    font-size: .9rem;
+    text-align: center;
+  }
+
+  .content {
+    width: 87%;
+    background-color: rgba(21, 21, 21);
+    float: right;
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+  }
+
+  .video {
+    width: 1700px;
+    position: relative;
+    top: 22%;
+    left: 1.2%;
+    margin: auto;
+    background-color: rgb(21, 21, 21);
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(60, 60, 60, 0.5);
+    font-size: 0;
+  }
+
+  .content2 {
+    font-size: 1rem;
+    width: 390px;
+    height: 370px;
+    background-color: rgb(21, 21, 21);
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    border-radius: 5%;
+    transition: .2s;
+  }
+
+  .content2:active {
+    background-color: #888;
+  }
+
+  .pic {
+    width: 370px;
+    height: 200px;
+    background-color: rgb(21, 21, 21);
+    position: relative;
+    top: 3%;
+    left: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background-image: url("https://picsum.photos/360/200/?random=1");
+    background-size: cover;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(21, 21, 21);
+    position: relative;
+    top: 20px;
+    right: 143px;
+    margin: auto;
+    border-radius: 50%;
+    background-image: url("https://picsum.photos/80/80/?random=1");
+  }
+
+  .text9 {
+    width: 280px;
+    height: 140px;
+    color: #fff;
+    position: relative;
+    float: right;
+    bottom: 50px;
+    right: 10px;
+    margin: 0;
+    font-size: 1.2rem;
+    background-color: rgba(21, 21, 21, 0.1);
+    cursor: pointer;
+  }
+
+  .word {
+    cursor: pointer;
+  }
+
+  .word:hover {
+    color: #fff;
+  }
+
+  .yt:hover {
+    cursor: pointer;
+  }
+
+  .test {
+    width: 400px;
+    height: 400px;
+    background: #ffa;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+  }
+
+  .search-row {
+    position: relative;
+    left: 20%;
+    height: 55px;
+    background-color: rgba(34, 34, 34, 0.96);
+  }
+
+  .clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+</style>
+
+<body>
+  <div class="big-container-top">
+    <div class="container-top1">
+      <div class="search-row">
+        <!-- <span class="icon2"></span> -->
+        <input type="search" id="search" placeholder="搜尋" />
+      </div>
+      <div class="login-row">
+        <div class="icon4"><a href="#"><i class="fa fa-home fa-fw"></i></a></div>
+        <div class="icon5"><a href="#"><i class="fa fa-home fa-fw"></i></a></div>
+        <div class="icon6"><a href="#"><i class="fa fa-home fa-fw"></i></a></div>
+        <div class="icon7"><i style="cursor: pointer;" class="fa fa-home fa-fw"></i></div>
+      </div>
+    </div>
+    <div class="container-top2">
+      <div class="big-box">
+        <div class="small-box" style="background-color: #ccc;">全部</div>
+        <div class="small-box">音樂</div>
+        <div class="small-box">直播中</div>
+        <div class="small-box">動畫</div>
+        <div class="small-box">ASMR</div>
+        <div class="small-box">美容訣竅</div>
+        <div class="small-box">烹飪節目</div>
+        <div class="small-box">手工藝</div>
+        <div class="small-box">寵物</div>
+        <div class="small-box">視覺藝術</div>
+        <div class="small-box">動作冒險遊戲</div>
+        <div class="small-box">最新上傳</div>
+        <div class="small-box">已觀看</div>
+        <div class="small-box">讓你耳目一新的影片</div>
+      </div>
+    </div>
+  </div>
+  <div class="big-container-left">
+    <div class="header col fixed" style="background-color: #222;">
+      <div class="header-icon"><i class="fa fa-home fa-fw"></i></div>
+      <div class="yt">Youtube</div>
+    </div>
+    <div class="container-left">
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">首頁</div>
+      </div>
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">探索</div>
+      </div>
+      <div class="col line" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">訂閱內容</div>
+      </div>
+      <div class="col line-top" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">媒體庫</div>
+      </div>
+      <div class="col line" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">觀看紀錄</div>
+      </div>
+      <div class="text2 float line" style="margin-top: 5px;">
+        <p>登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</p>
+        <input type="button" id="head" value="登入">
+      </div>
+      <div class="col line-top" id="header" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">音樂</div>
+      </div>
+      <div class="col" id="header" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">體育</div>
+      </div>
+      <div class="col" id="header" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">遊戲</div>
+      </div>
+      <div class="col" id="header" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">電影</div>
+      </div>
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">新聞</div>
+      </div>
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">直播</div>
+      </div>
+      <div class="col line" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">360度影片</div>
+      </div>
+      <div class="col line line-top" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">瀏覽頻道</div>
+      </div>
+      <div class="text3 float" style="color: #ccc;margin-top: 5px;">
+        <p>更多 YOUTUBE 功能</p>
+      </div>
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">YouTube Premium</div>
+      </div>
+      <div class="col line" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">直播</div>
+      </div>
+      <div class="col line-top" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">設定</div>
+      </div>
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">檢舉紀錄</div>
+      </div>
+      <div class="col" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">說明</div>
+      </div>
+      <div class="col line" style="cursor :pointer;">
+        <div class="icon"><i class="fa fa-home fa-fw"></i></div>
+        <div class="text">提供意見</div>
+      </div>
+      <div class="float text4">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe deserunt in, fuga molestiae ut ducimus. Autem
+        debitis blanditiis mollitia ducimus architecto expedita, velit eum sit, inventore rerum ullam illo obcaecati
+        assumenda labore incidunt. Amet provident vitae quam nam veritatis quo.
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="banner">
+      <div>
+        YouTube Music
+        <br>
+        千萬別錯過 Music Premium 家庭方案
+        <button class="btn" onclick="location.href='#';" style="cursor :pointer;">立即訂閱</button>
+        <button class="btn1" onclick="location.href='#';" style="cursor :pointer;">╳</button>
+      </div>
+    </div>
+    <div class="video">
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+    </div>
+    <div class="video">
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+    </div>
+    <div class="video">
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+      <div class="content2" onclick="location.href='#';" style="cursor :pointer;">
+        <div class="pic"></div>
+        <div class="circle"></div>
+        <div class="text9">《沙丘》深度解析:一部「反漫威」的電影 | 萬字解析 | 超粒...<br><span style="color:#aaa"><span
+              class="word">超粒方✔</span><br>觀看次數：8.9萬次．18
+            小時前</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
